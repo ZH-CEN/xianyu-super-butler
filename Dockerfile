@@ -49,7 +49,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # 复制前端构建产物到 static 目录
-COPY --from=frontend-builder /frontend/dist ./static
+COPY --from=frontend-builder /static/. ./static/
 
 # 项目已完全开源，无需编译二进制模块
 
