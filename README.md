@@ -99,6 +99,25 @@ python Start.py
 # 浏览器打开 http://localhost:8080
 ```
 
+### 🐳 自动 Docker 构建（CI/CD）
+
+仓库已内置 GitHub Actions 自动构建流程（`.github/workflows/docker-build.yml`）：
+
+- `push` 到 `main/master`：自动构建镜像
+- 打 `v*` 标签（如 `v1.0.0`）：自动按版本标签构建镜像
+- `pull_request`：仅验证可构建，不推送镜像
+
+镜像默认推送到：
+
+`ghcr.io/<owner>/<repo>`
+
+例如发布一个版本镜像：
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
 ### 🔐 默认登录信息
 
 ```
