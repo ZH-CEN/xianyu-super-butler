@@ -46,7 +46,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # 复制项目文件（排除 frontend 目录）
-COPY . .
+COPY . . 
 
 # 复制前端构建产物到 static 目录（vite outDir=../static）
 COPY --from=frontend-builder /static ./static
